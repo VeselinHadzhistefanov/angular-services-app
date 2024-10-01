@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {NgOptimizedImage} from "@angular/common";
 import { EmployeeInformationComponent } from './employee-information/employee-information.component';
+import { EmployeeInformationFormComponent } from './employee-information-form/employee-information-form.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeInformationComponent
+    EmployeeInformationComponent,
+    EmployeeInformationFormComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,21 @@
-<p>employee-information works!</p>
+<button type="button" name="button" (click)="getInfoFromService1()">Get info for user 1</button>
+<ul class="list-group">
+  <li *ngFor="let info of infoReceived1" class="list-group-info">{{ info }}</li>
+</ul>
+
+<button type="button" name="button" (click)="getInfoFromService2()">Get info for user 2</button>
+<ul class="list-group">
+  <li *ngFor="let info of infoReceived2" class="list-group-info">{{ info }}</li>
+</ul>
+
+<button type="button" name="button" (click)="getInfoFromService3()">Get info for user 3</button>
+<ul class="list-group">
+  <li *ngFor="let info of infoReceived3" class="list-group-info">{{ info }}</li>
+</ul>
+
+<button type="button" name="button" (click)="requestInfoFromDataService()">Create Data List</button>
+<div *ngFor="let data of infoReceivedArray">
+  <ul class="list-group">
+    <li *ngFor="let info of data" class="list-group-info">{{info}}</li>
+  </ul>
+</div>

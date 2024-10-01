@@ -1,0 +1,13 @@
+<div class="employee-information-form">
+  <h3>Employee information:</h3>
+  <form #employeeInfo = "ngForm" (ngSubmit)="createEmployee(employeeInfo)">
+    <div class="form-group"><label for="employeeName">Username: </label>
+      <input #employeeName = "ngModel" required ngModel [minlength]="2" [maxLength]="14" type="text" name="employeeName" id="employeeName" class="form-control">
+    </div>
+
+    <div class="group-form"><label for="employeeId">Id: </label>
+      <input #employeeId = "ngModel" required ngModel [minLength]="2" [maxLength] ="14" type="text" name="employeeId" id="employeeId" class="form-control">
+    </div>
+    <button type="submit" ngModel>Submit</button>
+  </form>
+</div>

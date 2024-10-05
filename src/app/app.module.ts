@@ -7,6 +7,7 @@ import {NgOptimizedImage} from "@angular/common";
 import { EmployeeInformationComponent } from './employee-information/employee-information.component';
 import { EmployeeInformationFormComponent } from './employee-information-form/employee-information-form.component';
 import {FormsModule} from "@angular/forms";
+import {DataService} from "./data.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import {FormsModule} from "@angular/forms";
         NgOptimizedImage,
         FormsModule
     ],
-  providers: [],
+  providers: [
+    { provide: DataService },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,7 +5,7 @@ import {DataService} from "../data.service";
   selector: 'app-employee-information',
   templateUrl: './employee-information.component.html',
   styleUrls: ['./employee-information.component.css'],
-  providers: [DataService]
+  providers: []
 })
 export class EmployeeInformationComponent {
   infoReceived1: string[] = []
@@ -33,10 +33,10 @@ export class EmployeeInformationComponent {
     this.addInfo(this.infoReceived3)
   }
 
-  getInfoFromServiceWithId(id: number): string[] | null{
+  getInfoFromServiceWithId(id: number): string[] | null {
     let info = this.dservice.getInfoById(id)
 
-    if(info){
+    if (info) {
       this.addInfo(info)
       return info
     }
@@ -44,14 +44,19 @@ export class EmployeeInformationComponent {
     return null
   }
 
-  addInfo(info : string[]): string[] {
+  addInfo(info: string[]): string[] {
     this.infoReceivedArray.push(info)
 
     return info
   }
 
-  requestInfoFromDataService(){
-    for(let i = this.infoReceivedArray.length, info = this.getInfoFromServiceWithId(i); info ; i++, info = this.getInfoFromServiceWithId(i)){
+  requestInfoFromDataService() {
+    // DEBUG code below
+    let nEmp = this.infoReceivedArray.length
+    console.log(nEmp)
+    console.log(this.getInfoFromServiceWithId(nEmp))
+
+    for (let i = this.infoReceivedArray.length, info = this.getInfoFromServiceWithId(i); info; i++, info = this.getInfoFromServiceWithId(i)) {
       console.log(info)
     }
   }

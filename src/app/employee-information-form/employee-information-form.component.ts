@@ -6,15 +6,16 @@ import {DataService} from "../data.service";
   selector: 'app-employee-information-form',
   templateUrl: './employee-information-form.component.html',
   styleUrls: ['./employee-information-form.component.css'],
-  providers: [DataService]
+  providers: []
 })
 export class EmployeeInformationFormComponent {
 
-  createEmployee(employeeInfo : NgForm){
-    console.log("Employee info: ", "Employee Name: ", employeeInfo.controls["employeeName"].value, " Employee Id: ", employeeInfo.controls["employeeId"].value, " please query database for confirmation.")
+  createEmployee(employeeInfoForm : NgForm){
+    console.log("Employee info: ", "Employee Name: ", employeeInfoForm.controls["employeeName"].value, " Employee Id: ", employeeInfoForm.controls["employeeId"].value, " please query database for confirmation.")
     // Create employee object in database / employee service
 
-    this.dservice.addInfo([employeeInfo.controls["employeeName"].value, employeeInfo.controls["employeeId"].value])
+    let empInfo : string[] = [employeeInfoForm.controls["employeeName"].value, employeeInfoForm.controls["employeeId"].value]
+    this.dservice.addInfo([employeeInfoForm.controls["employeeName"].value, employeeInfoForm.controls["employeeId"].value])
   }
 
   constructor(private dservice : DataService){
